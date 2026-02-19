@@ -17,6 +17,8 @@ builder.Services.AddCors(options =>
         policy => policy.WithOrigins("http://localhost:5173").AllowAnyHeader().AllowAnyMethod());
 });
 
+builder.Services.AddSingleton<CodeReviewAPI.Services.OpenAIService>();
+
 var app = builder.Build();
 app.UseCors("AllowReact");
 
